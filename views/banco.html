@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/d5ea0dfb99.js" crossorigin="anonymous"></script>
+
+    <title>Interface Banco</title>
+</head>
+<body>
+    <!-- primeira tela  -->
+    <div id="tela1">
+        <header id="roxo">
+            <div id="icones">
+                <i id="userIcon" class='bx bxs-user-circle'></i>
+                <div id="group-icons">
+                    <i class='bx bxs-low-vision'></i>
+                    <i class='bx bx-help-circle' ></i>
+                    <i class='bx bx-envelope' ></i>
+                </div>
+            </div>
+            <div id="message">
+                <span>Olá, Marcos Antônio de Oliveira</span>
+            </div>
+        </header>
+        <section id="infos">
+            <div id="conta">    
+                <span id="titulo-conta">Conta ></span>
+                <span id="saldo">R$ 116,88</span>
+            </div>
+            <div id="opcoes">
+                <div class="opcao">
+                    <div id="botao-um" class="botao">
+                        <i  class="fa-brands fa-pix icon-botao"></i>
+                    </div>
+                    <div class="legenda">
+                        <p>Area Pix</p>
+                    </div>
+                </div>
+                <div class="opcao">
+                    <div class="botao">
+                        <i class="fa-solid fa-barcode icon-botao"></i>
+                    </div>
+                    <div class="legenda">
+                        <p>Pagar</p>
+                    </div>
+                </div>
+                <div class="opcao">
+                    <div class="botao">
+                        <i class="fa-solid fa-hand-holding-dollar icon-botao"></i>
+                        <span id="valorEmprestimo">R$15.000</span>
+                    </div>
+                    <div class="legenda">
+                        <p style="margin-top: 16px;">Pegar Emprestado</p>
+                    </div>
+                </div>
+                <div class="opcao">
+                    <div class="botao">
+                        <i class="fa-solid fa-money-bill-transfer icon-botao"></i>
+                    </div>
+                    <div class="legenda">
+                        <p>Transferência</p>
+                    </div>
+                </div>
+            </div>
+            <div id="meus-cartoes">
+                <div id="cartoes">
+                    <i style="margin-left: 5%;" class="fa-regular fa-credit-card icon-botao"></i>
+                    <span>Meus Cartões</span>
+                </div>
+            </div>
+            <div id="propaganda">
+                <div id="blocoPropaganda">
+                    <p>Prêmios mensais com Nubank Vida a partir de...</p>
+                </div>
+            </div>
+        </section>
+        <section id="cartaoCredito">
+            <div id="credito">
+                <div id="credito2">
+                <span id="titulo-credito">Cartão de crédito ></span>
+                    <div id="precoFatura">
+                        <span id="fatura-atual">Fatura atual</span>
+                        <span id="titulo-credito">R$ 2.999,00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- segunda tela -->
+    <div id="tela2">
+        <header id="esc">
+            <i class="fa-solid fa-xmark icon-botao icon-esc"></i>
+            <i class="fa-regular fa-circle-question icon-esc"></i>
+        </header>
+        <div id="conteudoTelaDois">
+            <div id="descArea">
+                <span id="tituloDesc">Área Pix</span>
+                <span id="descricao">Envie e receba pagamentos a qualquer hora e dia da semana, sem pagar nada por isso.</span>
+            </div>
+            <div id="options-pix">
+                <div id="optionsPix">
+                    <div class="opcao-pix">
+                        <div class="botao-pix" id="botao-dois">
+                            <i class="fa-solid fa-money-bill-transfer icon-botao"></i>
+                        </div>
+                        <div class="legenda-pix">
+                            <p>Transferir</p>
+                        </div>
+                    </div>
+                    <div class="opcao-pix">
+                        <div class="botao-pix">
+                            <i class="fa-solid fa-calendar icon-botao"></i>                            
+                        </div>
+                        <div class="legenda-pix">
+                            <p >Programar</p>
+                        </div>
+                    </div>
+                    <div class="opcao-pix">
+                        <div class="botao-pix">
+                            <i class="fa-solid fa-qrcode icon-botao"></i>
+                        </div>
+                        <div class="legenda-pix">
+                            <p  style="margin-top: 16px;">Ler QR Code</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="optionsPix">
+                    <div class="opcao-pix">
+                        <div class="botao-pix">
+                            <i class="fa-solid fa-copy icon-botao"></i>
+                        </div>
+                        <div class="legenda-pix">
+                            <p  style="margin-top: 16px;">Pix Copia e Cola</p>
+                        </div>
+                    </div>
+                    <div class="opcao-pix">
+                        <div class="botao-pix">
+                            <i class="fa-regular fa-message icon-botao"></i>                 
+                               </div>
+                        <div class="legenda-pix">
+                            <p >Cobrar</p>
+                        </div>
+                    </div>
+                    <div class="opcao-pix">
+                        <div class="botao-pix">
+                            <i class="fa-solid fa-money-bill-transfer icon-botao"></i>        
+                    </div>
+                        <div class="legenda-pix">
+                            <p>Depositar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="preferencias">
+                <div id="conteudoPreferencias">
+                    <span style="font-size: 20px;color:#5d5d5d">Preferências</span>
+                    <div id="linhaPreferencia" class="borda-baixo">
+                        <div id="iconePreferencia">
+                            <i class="fa-solid fa-shield icon-botao"></i>
+                        </div>
+                        <div id="textoPreferencia">
+                            <span class="texto-preferencia">Registrar ou trazer chaves</span>
+                        </div>
+                        <div id="arrow-preferencia">
+                            <i class="fa-solid fa-chevron-right icon-botao"></i>
+                        </div>
+                    </div>
+                    <div id="linhaPreferencia">
+                        <div id="iconePreferencia">
+                            <i class="fa-solid fa-gear icon-botao"></i>
+                        </div>
+                        <div id="textoPreferencia">
+                            <span class="texto-preferencia">Configurar pix</span>
+                        </div>
+                        <div id="arrow-preferencia">
+                            <i class="fa-solid fa-chevron-right icon-botao"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/ajax-setup.js"></script>
+</html>

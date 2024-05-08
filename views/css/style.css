@@ -1,0 +1,382 @@
+@font-face {
+    font-family: nubank;
+    src: url('../fonts/Graphik-Regular.ttf');
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: nubank;
+}
+
+@media (max-width:500px){
+    #tela1{
+        
+        width: 100%;
+        
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        
+    }
+    #roxo{
+        width: 100%;
+        height: 110px;
+        background-color: #820ad1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+    }
+    
+    #icones{
+        width: 90%;
+        height: 60%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        
+    }
+    i{
+        font-size: 20px;
+        color: #fff;
+    }
+    #userIcon{
+        font-size: 42px;
+    }
+    #group-icons{
+        display: flex;
+        gap: 15px;
+        
+    }
+    #message{
+        display: flex;
+        align-items: center;
+        height: 40%;
+        width: 88%;
+        color: #fff;
+        font-size: 22px;
+        margin-left: 5px;
+    }
+    #infos{
+        display: flex;
+        width: 88%;
+        height: 60vh;
+        
+        align-items: center;
+        flex-direction: column;
+    }
+    #conta{
+        display: flex;
+        width: 100%;
+        height: 25%;
+        
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 6px;
+    }
+    #saldo{
+        font-weight: bold;
+        font-size: 24px;
+    }
+    #opcoes{
+        width: 100%;
+        height: 30%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .opcao{
+        height: 88%;
+        width: 22%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .botao{
+        position: relative;
+        width: 67px;
+        height: 65px;
+        border-radius: 100%;
+        background-color: #efefef;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .icon-botao{
+        color: #080808;
+        font-size: 20px;
+    }
+    .legenda p{
+        margin: 0 ;
+        padding: 0;
+        text-overflow: ellipsis;
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+        font-size: 16px;
+    }
+    .legenda{
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #titulo-conta{
+        font-size: 22px;
+    }
+    #valorEmprestimo{
+        position: absolute;
+        font-size: 12px;
+        top: 75%;
+        background-color: #820ad1;
+        color: #fff;
+        padding: 3px;
+        border-radius: 4px;
+    }
+    #meus-cartoes{
+        width: 95%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 20%;
+    }
+    #cartoes{
+        background-color: #efefef;
+        border-radius: 10px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 90%;
+        height: 70%;
+        gap: 14px;
+    }
+    #cartoes span{
+        font-weight: bold;
+    }
+    #propaganda{
+        width: 95%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 25%;
+    }
+    #blocoPropaganda{
+        background-color: #efefef;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 100%;
+        
+    }
+    #blocoPropaganda p{
+        width: 90%;
+        font-size: 18px;
+        text-align: left;
+        
+    }
+    #cartaoCredito{
+        height: 20vh;
+        width: 100%;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+
+    }
+    #credito{
+        width: 100%;
+        height: 90%;
+        
+        border-top: 2px solid rgba(239, 239, 239, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    #credito2{
+        width: 86%;
+        height: 96%;
+        
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    #precoFatura{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 8px;
+    }
+    #titulo-credito{
+        font-size: 22px;
+        font-weight: bold;
+    }
+    #fatura-atual{
+        font-size: 22px;
+    }
+    #tela2{
+        
+        display: none;
+        width: 100%;
+        height: 100vh;
+        display: none;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+            
+    
+    }
+    #esc{
+        height: 10%;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .icon-esc{
+        font-size: 26px;
+        color: #5d5d5d;
+    }
+    #conteudoTelaDois{
+        height: 90%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #descArea{
+        width: 90%;
+        height: 35%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    #optionsPix{
+        width: 100%;
+        height: 50%;
+    }
+    #preferencias{
+        width: 100%;
+        height: 20%;
+        border-top: 2px solid rgba(239, 239, 239, 1);
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    #conteudoPreferencias{
+        width: 90%;
+        height: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        
+    }
+    .texto-preferencia{
+        font-weight: bold;
+    }
+    #linhaPreferencia{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+        height: 30%;
+
+    }
+    .borda-baixo{
+        border-bottom: 2px solid rgba(239, 239, 239, 0.8);
+    }
+    #iconePreferencia{
+        width: 10%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        
+    }
+    #textoPreferencia{
+        width: 70%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #arrow-preferencia{
+        width: 10%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #tituloDesc{
+        font-size: 30px;
+        font-weight: bold;
+    }
+    #descricao{
+        font-size: 24px;
+        color: #5d5d5d;
+    }
+    #optionsPix{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+
+    }
+    #options-pix{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 45%;
+    }
+    
+    .opcao-pix{
+        height: 88%;
+        width: 22%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .botao-pix{
+        
+        width: 72px;
+        height: 70px;
+        border-radius: 100%;
+        background-color: #efefef;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .legenda-pix{
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
