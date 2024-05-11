@@ -12,6 +12,31 @@
 </head>
 <body>
     <!-- primeira tela  -->
+    <div id="login">
+        <header id="login-header">
+            <span>Login</span>
+        </header>
+        <form id="form-login" action="">
+            <div id="inputs-area">
+                <div id="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" id="email">
+                </div>
+                <div id="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="password">
+                </div>
+                <span id="esqueci">Esqueci minha senha</span>
+            </div>
+            <div id="error">
+                <span id="message-error"></span>
+            </div>
+            <div id="entrar-area">
+                <button id="entrar-btn">Entrar</button>
+            </div>
+        </form>
+
+    </div>
     <div id="tela1">
         <header id="roxo">
             <div id="icones">
@@ -23,7 +48,7 @@
                 </div>
             </div>
             <div id="message">
-                <span>Olá, Marcos Antônio de Oliveira</span>
+                <span>Olá, <span id="nome-span">Marcos Antônio de Oliveira</span></span>
             </div>
         </header>
         <section id="infos">
@@ -74,7 +99,7 @@
             </div>
             <div id="propaganda">
                 <div id="blocoPropaganda">
-                    <p>Prêmios mensais com Nubank Vida a partir de...</p>
+                    <p>Prêmios mensais com Green Vida a partir de...</p>
                 </div>
             </div>
         </section>
@@ -184,6 +209,392 @@
             </div>
         </div>
     </div>
+    <div id="tela3">
+        <div id="esc">  
+            <i class="fa-solid fa-xmark icon-botao icon-esc"></i>
+            <div id="separator">
+                <i class="fa-solid fa-globe icon-botao verde"></i>
+                <i class="fa-solid fa-qrcode icon-botao verde"></i>
+
+            </div>
+        </div>
+        <div id="conteudo-tela3">
+            <div id="descArea">
+                <span id="tituloDesc">Qual é o valor da transferência?</span>
+                <span id="saldo-disp">Saldo disponível de <span id="saldo">R$ 116,88</span></span>
+            </div>
+            <div id="input-area">
+                <input type="text" id="valor-pix" onKeyUp="mascaraMoeda(this, event)">
+            </div>
+            <div id="limites-area">
+            <span id="limites">Consultar meus limites pix ></span>
+            </div>
+            <div id="avancar-valor" >
+                <i class="fa-solid fa-chevron-right avancar-valor-btn" id="botao-tres" ></i>
+            </div>
+            
+        </div>
+    </div>
+    <div id="tela4">
+        <div id="esc">  
+            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="botao-tres" ></i>
+           
+        </div>
+        <div id="conteudo-tela3">
+            <div id="descArea-paraQuem">
+                <span id="tituloDesc">Para quem você quer transferir R$ 20,00</span>
+                <span id="texto-quem"><span class="negrito">Encontre um contato</span> na sua lista ou inicie uma <span class="negrito">nova transferência</span></span>
+            </div>
+            <div id="input-area">
+                <input type="text" id="chave-um">
+            </div>
+            <div id="contatos-area">
+                <div id="texto-contatos-area">
+                    <span>Contatos frequentes</span>
+                </div>
+                <div id="opcoes" class="op-contatos">
+                    <div class="opcao">
+                        <div id="botao-um" class="botao">
+                            <span>GH</span>
+                        </div>
+                        <div class="legenda">
+                            <p>Gustavo Henrique</p>
+                        </div>
+                    </div>
+                    <div class="opcao">
+                        <div class="botao">
+                            <span>MM</span>
+                        </div>
+                        <div class="legenda">
+                            <p>Margarida Maria</p>
+                        </div>
+                    </div>
+                    <div class="opcao">
+                        <div class="botao">
+                            <span>JS</span>
+                            
+                        </div>
+                        <div class="legenda">
+                            <p>Junior Santos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tela5">
+        <div id="esc">  
+            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="botao-tres" ></i>
+           
+        </div>
+        <div id="conteudo-tela3">
+            <div id="chave-input-group">
+                <label for="chave">Nome, CPF/CNPJ ou chave pix</label>
+                <input type="text" id="chave-input" class="chave-input-certo">
+            </div>
+            <div id="avancar-infos-contato">
+                <button id="transferir-btn">Transferir</button>
+            </div>
+        </div>
+    </div>
+    <div id="tela6">
+        <div id="esc">  
+            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="botao-tres" ></i>
+            <i class="fa-solid fa-ellipsis-vertical icon-botao icon-esc"></i>
+        </div>
+        <div id="conteudo-tela3">
+            <div id="transferindo-para">
+                <div id="circulo">
+                    <span id="iniciais">HF</span>
+                </div>
+                <div id="nome-valor">
+                    <div id="nome">
+                        <span id="destinatario-conta">Henrique Fernando</span>
+                    </div>
+                    <div id=valor>
+                        <span id="trans">Transferindo <span class="negrito">R$ 1,00</span></span>
+                    </div>
+                </div>
+            </div>
+            <div id="instituicoes">
+                <div id="group-instituicoes">
+                    <div id="icone-pix">
+                        <i  class="fa-brands fa-pix icon-botao"></i>
+                    </div>
+                    <div id="nome-instituicao" class="instituicao">
+                        <span id="nome-instituicao-font">BCO DO BRASIL S.A.</span>
+                        <span style="color: #5d5d5d;">Chave Pix</span>
+                    </div>
+                    <div id="icon-seta">
+                        <i class="fa-solid fa-chevron-right icon-botao"></i>
+                    </div>
+                </div>
+                <div id="group-instituicoes">
+                    <div id="icone-pix">
+                        <i class="fa-solid fa-building-columns icon-botao"></i>          
+                    </div>
+                    <div id="nome-instituicao">
+                        <span id="nome-instituicao-font">Outra instituição</span>                       
+                    </div>
+                    <div id="icon-seta">
+                        <i class="fa-solid fa-chevron-right icon-botao"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tela7">
+        <div id="esc">  
+            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="botao-tres" ></i>
+        </div>
+        <div id="conteudo-tela3">
+            <div id="titulo-area6">
+                <span>Transferindo</span>
+            </div>
+            <div id="valor-para-quem">
+                <div id="divisor-valor-alterar">
+                    <span id="valor-final">R$ 1,00</span>
+                    <span id="alterar"><i class="fa-solid fa-pen icon-botao"></i> Alterar</span>
+                </div>
+                <div id="para-quem-area">
+                    <p>para Henrique Fernando dos Santos</p>
+                </div>
+                <div id="escrever">
+                    <span id="escrever-font"><i class="fa-solid fa-message icon-botao"></i> Escrever uma mensagem...</span>
+                </div>
+                <div id="cpf-instituicao">
+                    <div id="group-cpf-ins">
+                        <span id="titulo-ci">CPF</span>
+                        <span id="desc-ci">289.182.182-09</span>
+                    </div>
+                    <div id="group-cpf-ins">
+                        <span id="titulo-ci">Instuituição</span>
+                        <span id="desc-ci">BCO DO BRASIL S.A.</span>
+                    </div>
+                </div>
+                <div id="continue">
+                    <button id="continue-btn">Escolher como transferir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tela8">
+        <div id="esc">  
+            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="botao-tres" ></i>
+        </div>
+        <div id="conteudo-tela3">
+            <div id="como-transferir">
+                <p id="titulo-area8">Como você gostaria de transferir R$ 1,00</p>
+                <span id="para-tal">Para <span class="negrito">Henrique Fernando</span></span>
+            </div>
+            <div id="opcoes-como">
+                
+                <div id="como-group" class="borda-baixo ">
+                    <div id="radio">
+                        <i class="fa-sharp fa-solid fa-circle icon-botao ico-como"></i>                    
+                    </div>
+                    <div id="info-como">
+                        <span id="como-t">Saldo da conta</span>
+                        <span id="como-d">Saldo disponível de <span class="negrito">R$ 28,99</span>.</span>
+                    </div>
+                </div>
+            <div id="como-group" class="borda-baixo desconto">
+                <span id="desconto">Com desconto</span>
+                <div id="radio">
+                <i class="fa-regular fa-circle icon-botao ico-como"></i>
+                </div>
+                <div id="info-como" >
+                    <span id="como-t">Cartão de crédito</span>
+                    <span id="como-d">Você tem um limite de <span class="negrito">R$ 1999,99</span> para usar com Pix no cartão de crédito este mês.</span>
+                </div>
+            </div>
+            </div>
+            <div id="continue">
+                <button class="saldo-conta" id="continue-btn">Continuar com saldo...</button>
+            </div>
+        </div>
+    </div>
+    <div id="tela9">
+        <div id="esc">  
+            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="botao-tres" ></i>
+        </div>
+        <div id="conteudo-tela3">
+            <div id="como-transferir">
+                <p id="titulo-area8">Revise os detalhes da sua transferência</p>
+                <span id="para-tal">Para <span class="negrito">Henrique Fernando</span></span>
+            </div>
+            <div id="lista">
+                <div id="como-group">
+                    <div id="info-como">
+                        <span>Quando vai ser</span>
+                        <span>Agora</span>
+                    </div>
+                    <div id="alterar-area">
+                        <button>Alterar</button>
+                    </div>
+                </div>
+                <div id="como-group">
+                    <div id="info-como">
+                        <span>Como</span>
+                        <span>Pix</span>
+                    </div>
+                    <div id="alterar-area">
+                        <button>Alterar</button>
+                    </div>
+                </div>
+                <div id="como-group">
+                    <div id="info-como">
+                        <span>Transferindo com</span>
+                        <span>Saldo da conta</span>
+                    </div>
+                    <div id="alterar-area">
+                        <button>Alterar</button>
+                    </div>
+                </div>
+                <div id="como-group">
+                    <div id="info-como">
+                        <span>Repetir transferência</span>
+                        
+                    </div>
+                    <div id="alterar-area">
+                        <input type="checkbox">
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        <div id="continue2">
+            <div id="pagar-area">
+                <span class="negrito" style="font-size: 20px;">R$ 1,00</span>
+                <span id="total-font">Total a pagar</span>
+            </div>
+            <button id="transferir-final-btn">Transferir</button>
+        </div>
+    </div>
+    </div>
+    <div id="tela10">
+        <div id="esc">  
+            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="botao-tres" ></i>
+        </div>
+        <div id="conteudo-tela3">
+            <div id="titulo-area6">
+                <span>Digite a <span class="roxo">senha de 4 digitos do seu cartão</span></span>
+            </div>
+            <div id="senha-area">
+                <input type="password" id="senha" maxlength="4">
+            </div>
+        </div>
+    </div>
+    <div id="tela11">
+        <div id="conteudo-load">
+            <span id="transferindo-font">Transferindo...</span>
+            <div id="barra">
+                <div id="barra-carregada"></div>
+            </div>
+        </div>
+    </div>
+    <div id="tela12">
+        <div id="esc">  
+            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="botao-tres" ></i>
+            <i class="fa-solid fa-share icon-botao icon-esc"></i>
+        </div>
+        <div id="conteudo-tela3">
+            <div id="como-transferir">
+                <p id="titulo-area8">Comprovante de transferência</p>
+                <span id="para-tal">07 MAI 2024 09:17:10</span>
+            </div>
+            <div id="lista-comprovante">
+                <div id="como-group">
+                    <div id="info-como">
+                        <span class="negrito">Valor</span>
+                        
+                    </div>
+                    <div id="alterar-area">
+                        <span>R$ 1,00</span>
+                    </div>
+                </div>
+                <div id="como-group">
+                    <div id="info-como">
+                        <span class="negrito">Tipo de transferência</span>
+                        
+                    </div>
+                    <div id="alterar-area">
+                        <span>Pix</span>
+                    </div>
+                </div>
+            </div>
+            <div id="infos-destinatario">
+                <span id="destino-font"><i class="fa-solid fa-receipt icon-botao"></i> Destino</span>
+            
+            <div id="lista-destinatario">
+                <div id="como-group">
+                    <div id="info-como" class="d-dest">
+                        <span class="negrito">Nome</span>
+                        
+                    </div>
+                    <div id="alterar-area" class="t-dest">
+                        <span>Henrique Fernando</span>
+                    </div>
+                </div>
+                <div id="como-group">
+                    <div id="info-como" >
+                        <span class="negrito">Tipo de transferência</span>
+                        
+                    </div>
+                    <div id="alterar-area">
+                        <span>Pix</span>
+                    </div>
+                </div>
+                <div id="como-group">
+                    <div id="info-como"class="d-dest" >
+                        <span class="negrito">Instituicao</span>
+                        
+                    </div>
+                    <div id="alterar-area" class="t-dest">
+                        <span>BCO DO BRASIL S.A.</span>
+                    </div>
+                </div>
+                <div id="como-group">
+                    <div id="info-como" >
+                        <span class="negrito">Tipo de conta</span>
+                        
+                    </div>
+                    <div id="alterar-area" class="t-dest">
+                        <span>Conta corrente</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
 </body>
+
+
+<script>
+     String.prototype.reverse = function(){
+  return this.split('').reverse().join(''); 
+};
+document.getElementById("valor-pix").value = "R$"
+    function mascaraMoeda(campo,evento){
+        
+  var tecla = (!evento) ? window.event.keyCode : evento.which;
+  var valor  =  campo.value.replace(/[^\d]+/gi,'').reverse();
+  var resultado  = "";
+  var mascara = "##.###.###,##".reverse();
+  for (var x=0, y=0; x<mascara.length && y<valor.length;) {
+    if (mascara.charAt(x) != '#') {
+      resultado += mascara.charAt(x);
+      x++;
+    } else {
+      resultado += valor.charAt(y);
+      y++;
+      x++;
+    }
+  }
+  campo.value = "R$ " + resultado.reverse();
+}
+</script>
 <script src="./js/ajax-setup.js"></script>
 </html>
