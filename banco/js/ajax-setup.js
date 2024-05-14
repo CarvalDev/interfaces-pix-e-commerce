@@ -7,6 +7,8 @@ let saldoInt = 200
 let saldo = `R$ ${saldoInt},00`
 let dataInicio = new Date()
 let camposComSaldo = document.getElementsByName("saldo-text");
+let cpfCerto = "967352619210"
+let tentativa = "pix"
 
 for(var i =0;i<camposComSaldo.length;i++){
     camposComSaldo[i].innerText = saldo
@@ -40,7 +42,7 @@ $("#entrar-btn").on('click', function(e){
             e:email,
             s:senha
         },
-        url: '../app/controllers/login.php',
+        url: '../app/model/login.php',
         async: true,
         
         success: (response) =>{
@@ -83,6 +85,11 @@ $("#botao-um").on('click', function(e){
     $("#tela2").css('display', 'flex')
 })
 //tela2
+$("#returnTela1").on('click',function(e){
+    e.preventDefault()
+    $("#tela2").css('display', 'none')
+    $("#tela1").css('display', 'flex')
+})
 $("#botao-dois").on('click', function(e){
     e.preventDefault()
     clicks--
@@ -91,7 +98,11 @@ $("#botao-dois").on('click', function(e){
     $("#tela3").css('display', 'flex')
 })
 //tela3
-
+$("#returnTela2").on('click',function(e){
+    e.preventDefault()
+    $("#tela3").css('display', 'none')
+    $("#tela2").css('display', 'flex')
+})
 $("#valor-pix").on('click', function(e){
     e.preventDefault()
     if(!clicouNoInput){
@@ -104,13 +115,15 @@ $("#valor-pix").on('click', function(e){
 })
 
 
+
+
 $("#botao-tres").on('click', function(e){
     e.preventDefault()
     
     clicouNoInput = false
     let valorTransferencia = $("#valor-pix").val()
-    console.log(valorTransferencia)
-    if(valorTransferencia == "R$"){
+    console.log(valorTransferencia +"fodase")
+    if(valorTransferencia == "R$" || valorTransferencia == "R$ "){
         document.getElementById("message-error-saldo").innerText = "Por favor digite um valor"
         
     }else{
@@ -137,6 +150,21 @@ $("#botao-tres").on('click', function(e){
     }
     }
 })
+
+
+$("#returnTela3").on('click',function(e){
+    e.preventDefault()
+    $("#tela4").css('display', 'none')
+    console.log("asas")
+    $("#tela2").css('display', 'flex')
+})
+
+$("#returnTela4").on('click',function(e){
+    e.preventDefault()
+    $("#tela5").css('display', 'none')
+    $("#tela4").css('display', 'flex')
+})
+
 $("#chave-um").on('click', function(e){
     e.preventDefault()
     clicks--
@@ -156,14 +184,28 @@ $(".chave-input-certo").on('click', function(e){
     
 })
 
+$("#returnTela5").on('click',function(e){
+    e.preventDefault()
+    $("#tela6").css('display', 'none')
+    $("#tela5").css('display', 'flex')
+})
+
+
+
 $("#transferir-btn").on('click', function(e){
+    if($("#chave-input").val() != cpfCerto){
+        document.getElementById("erro-cpf-font").innerText = "Chave invalida"
+    }else{
     e.preventDefault()
     clicks--
     clicksCertos++
     clicouNoInput = false
     $("#tela5").css('display', 'none')
     $("#tela6").css('display', 'flex')
+    }
 })
+
+
 
 $(".instituicao").on('click', function(e){
     e.preventDefault()
@@ -173,6 +215,14 @@ $(".instituicao").on('click', function(e){
     $("#tela7").css('display', 'flex')
 })
 
+
+$("#returnTela6").on('click',function(e){
+    e.preventDefault()
+    $("#tela7").css('display', 'none')
+    $("#tela6").css('display', 'flex')
+})
+
+
 $("#continue-btn").on('click', function(e){
     e.preventDefault()
     clicks--
@@ -180,6 +230,25 @@ $("#continue-btn").on('click', function(e){
     $("#tela7").css('display', 'none')
     $("#tela8").css('display', 'flex')
 })
+
+$("#returnTela7").on('click',function(e){
+    e.preventDefault()
+    $("#tela8").css('display', 'none')
+    $("#tela7").css('display', 'flex')
+})
+
+$("#returnTela8").on('click',function(e){
+    e.preventDefault()
+    $("#tela9").css('display', 'none')
+    $("#tela8").css('display', 'flex')
+})
+
+$("#returnTela9").on('click',function(e){
+    e.preventDefault()
+    $("#tela10").css('display', 'none')
+    $("#tela9").css('display', 'flex')
+})
+
 $(".saldo-conta").on('click', function(e){
     e.preventDefault()
     clicks--
@@ -206,6 +275,11 @@ $("#senha").on('click', function(e){
     }
    
     
+})
+
+$("#alterar").on('click', ()=>{
+    $("#tela7").css('display', 'none')
+    $("#tela3").css('display', 'flex')
 })
 
 $("#senha").on('keyup', function(e){
@@ -242,9 +316,10 @@ $("#senha").on('keyup', function(e){
                 ce: ce,
                 pp: pp,
                 iu: iu,
-                tt:tt
+                tt:tt,
+                t:tentativa
             },
-            url: '../app/controllers/inserirTentativa.php',
+            url: '../app/model/inserirTentativa.php',
             async: true,
             
             success: (response) =>{

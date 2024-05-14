@@ -1,7 +1,7 @@
 <?php
-require_once(__DIR__."../../Model/Tentativa.php");
+require_once("Tentativa.php");
     try{
-    Tentativa::store($_POST['ct'], $_POST['ce'], $_POST['pp'],$_POST['tt'], $_POST['iu']);
+    Tentativa::store($_POST['ct'], $_POST['ce'], $_POST['pp'],$_POST['tt'],$_POST['t'], $_POST['iu']);
     $response = array("success" => true);
     echo json_encode($response);
 }catch(Exception $e){

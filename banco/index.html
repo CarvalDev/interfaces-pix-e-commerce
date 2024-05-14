@@ -118,7 +118,7 @@
     <!-- segunda tela -->
     <div id="tela2">
         <header id="esc">
-            <i class="fa-solid fa-xmark icon-botao icon-esc"></i>
+            <i class="fa-solid fa-xmark icon-botao icon-esc" id="returnTela1"></i>
             <i class="fa-regular fa-circle-question icon-esc"></i>
         </header>
         <div id="conteudoTelaDois">
@@ -211,7 +211,7 @@
     </div>
     <div id="tela3">
         <div id="esc">  
-            <i class="fa-solid fa-xmark icon-botao icon-esc"></i>
+            <i class="fa-solid fa-xmark icon-botao icon-esc" id="returnTela2"></i>
             <div id="separator">
                 <i class="fa-solid fa-globe icon-botao verde"></i>
                 <i class="fa-solid fa-qrcode icon-botao verde"></i>
@@ -239,7 +239,7 @@
     </div>
     <div id="tela4">
         <div id="esc">  
-            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="botao-tres" ></i>
+            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="returnTela3" ></i>
            
         </div>
         <div id="conteudo-tela3">
@@ -286,7 +286,7 @@
     </div>
     <div id="tela5">
         <div id="esc">  
-            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="botao-tres" ></i>
+            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="returnTela4" ></i>
            
         </div>
         <div id="conteudo-tela3">
@@ -297,11 +297,14 @@
             <div id="avancar-infos-contato">
                 <button id="transferir-btn">Transferir</button>
             </div>
+            <div id="erro-cpf">
+                <span id="erro-cpf-font"></span>
+            </div>
         </div>
     </div>
     <div id="tela6">
         <div id="esc">  
-            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="botao-tres" ></i>
+            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="returnTela5" ></i>
             <i class="fa-solid fa-ellipsis-vertical icon-botao icon-esc"></i>
         </div>
         <div id="conteudo-tela3">
@@ -347,7 +350,7 @@
     </div>
     <div id="tela7">
         <div id="esc">  
-            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="botao-tres" ></i>
+            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="returnTela6" ></i>
         </div>
         <div id="conteudo-tela3">
             <div id="titulo-area6">
@@ -382,7 +385,7 @@
     </div>
     <div id="tela8">
         <div id="esc">  
-            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="botao-tres" ></i>
+            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="returnTela7" ></i>
         </div>
         <div id="conteudo-tela3">
             <div id="como-transferir">
@@ -418,7 +421,7 @@
     </div>
     <div id="tela9">
         <div id="esc">  
-            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="botao-tres" ></i>
+            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="returnTela8" ></i>
         </div>
         <div id="conteudo-tela3">
             <div id="como-transferir">
@@ -465,19 +468,19 @@
                 
                 
             </div>
-        </div>
-        <div id="continue2">
-            <div id="pagar-area">
-                <span class="negrito" style="font-size: 20px;" name="valor-transferencia">R$ 1,00</span>
-                <span id="total-font">Total a pagar</span>
+            <div id="continue2">
+                <div id="pagar-area">
+                    <span class="negrito" style="font-size: 20px;" name="valor-transferencia">R$ 1,00</span>
+                    <span id="total-font">Total a pagar</span>
+                </div>
+                <button id="transferir-final-btn">Transferir</button>
             </div>
-            <button id="transferir-final-btn">Transferir</button>
         </div>
     </div>
     </div>
     <div id="tela10">
         <div id="esc">  
-            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="botao-tres" ></i>
+            <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="returnTela9" ></i>
         </div>
         <div id="conteudo-tela3">
             <div id="titulo-area6">

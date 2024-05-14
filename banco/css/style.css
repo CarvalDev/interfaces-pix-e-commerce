@@ -10,11 +10,18 @@
     font-family: nubank;
 }
 
-@media (max-width:500px){
-    #login{
-        display: flex ;
-        width: 100%;
+    body{
         height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #login{
+        display: flex;
+        width: 375px;
+        height: 667px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -104,8 +111,8 @@
     }
     #tela1{
         display: none;
-        width: 100%;
-        height: 100vh;
+        width: 375px;
+        height: 667px;
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
@@ -321,8 +328,8 @@
     #tela2{
         
         display: none;
-        width: 100%;
-        height: 100vh;
+        width: 375px;
+        height: 667px;
         display: none;
         justify-content: flex-start;
         align-items: center;
@@ -494,8 +501,8 @@
         display: none;
         align-items: center;
         flex-direction: column;
-        height: 100vh;
-        width: 100%;
+        width: 375px;
+        height: 667px;
 
     }
     #separator{
@@ -575,8 +582,8 @@
         display: none;
         align-items: center;
         flex-direction: column;
-        height: 100vh;
-        width: 100%;
+        width: 375px;
+        height: 667px;
 
     }
     #contatos-area{
@@ -608,8 +615,8 @@
         display: none;
         align-items: center;
         flex-direction: column;
-        height: 100vh;
-        width: 100%;
+        width: 375px;
+        height: 667px;
 
     }
     #chave-input-group{
@@ -654,8 +661,8 @@
         display: none;
         align-items: center;
         flex-direction: column;
-        height: 100vh;
-        width: 100%;
+        width: 375px;
+        height: 667px;
     }
     #transferindo-para{
         height: 20%;
@@ -746,8 +753,8 @@
         display: none;
         align-items: center;
         flex-direction: column;
-        height: 100vh;
-        width: 100%;
+        width: 375px;
+        height: 667px;
 
     }
     #titulo-area6{
@@ -859,8 +866,8 @@
         display: none;
         align-items: center;
         flex-direction: column;
-        height: 100vh;
-        width: 100%;
+        width: 375px;
+        height: 667px;
 
     }
     #como-transferir{
@@ -935,8 +942,8 @@
         display: none;
         align-items: center;
         flex-direction: column;
-        height: 100vh;
-        width: 100%;
+        width: 375px;
+        height: 667px;
 
     }
     #lista{
@@ -971,7 +978,7 @@
     #continue2{
         position: absolute;
         bottom: 0%;
-        width: 80%;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -1006,8 +1013,8 @@
         display: none;
         align-items: center;
         flex-direction: column;
-        height: 100vh;
-        width: 100%;
+        width: 375px;
+        height: 667px;
 
     }
     .roxo{
@@ -1045,8 +1052,8 @@
         align-items: center;
         justify-content: flex-end;
         flex-direction: column;
-        height: 100vh;
-        width: 100%;
+        width: 375px;
+        height: 667px
 
     }
     #conteudo-load{
@@ -1080,8 +1087,8 @@
         align-items: center;
         justify-content:center;
         flex-direction: column;
-        height: 100vh;
-        width: 100%;
+        width: 375px;
+        height: 667px
 
     }
     #lista-comprovante{
@@ -1119,6 +1126,19 @@
         display: flex;
         justify-content: center;
     }
+    #erro-cpf{
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 40%;
+        
+    }
+    #erro-cpf-font{
+        font-size: 20px;
+        color:#813c3c;
+    }
     @keyframes carregando{
         from{
             width: 0%;
@@ -1127,5 +1147,5 @@
             width: 100%;
         }
     }
-}
+
 

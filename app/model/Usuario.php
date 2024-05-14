@@ -1,5 +1,5 @@
 <?php  
-require_once(__DIR__."/Conexao.php");
+require_once("Conexao.php");
 
 class Usuario{
     public static function logar($email, $senha)

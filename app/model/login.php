@@ -1,5 +1,5 @@
 <?php  
-require_once(__DIR__."../../Model/Usuario.php");
+require_once("Usuario.php");
 try{
     $dados = Usuario::logar($_POST['e'], $_POST['s']);
     if($dados !=false){
