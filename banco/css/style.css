@@ -18,14 +18,17 @@
         align-items: center;
     }
 
-    #login{
-        display: flex;
+    #login, #tela-mensagem{
+        display:flex;
         width: 375px;
         height: 667px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
+    }
+    #tela-mensagem{
+        display: none ;
     }
     #login-header{
         height: 10%;
@@ -117,6 +120,16 @@
         align-items: center;
         flex-direction: column;
         
+    }
+    #salvar-msg-btn{
+        background-color: #588157;
+        color: #fff;
+        padding: 10px;
+        border-radius: 20px;
+        border: none;
+        font-size: 22px;
+        margin-bottom: 10%;
+        width: 90%;
     }
     #roxo{
         width: 100%;
@@ -353,6 +366,39 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #input-msg-area{
+        width: 100%;
+        height: 20%;
+        margin-top: 3%;
+
+    }
+    #msg-input{
+        width: 100%;
+        height: 40px;
+        border: none;
+        border-bottom: 2px solid #588157;
+        padding: 5px;
+        font-size: 18px;
+        outline: none;
+    }
+    #desc-regras{
+        font-size: 14px;
+        width: 94%;
+    }
+    #divRegras{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        border:rgba(0 , 0, 0, 0.6) 1px solid;
+        border-radius: 10px;
+    }
+    #regras-area{
+        height: 40%;
+        display: flex;
         justify-content: center;
         align-items: center;
     }
@@ -757,6 +803,9 @@
         height: 667px;
 
     }
+    #escrever-font{
+        cursor: pointer;
+    }
     #titulo-area6{
         height: 5%;
         width: 100%;
@@ -816,6 +865,32 @@
     }
     #escrever-font i{
         color: #588157;
+    }
+    #mensagem-span{
+        color: #080808;
+        border-radius: 10px;
+        border: 1px solid rgba(0 , 0, 0, 0.6);
+        padding: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 21ch;
+        white-space: nowrap;
+    }
+    #separator-msg{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+
+    }
+    
+    #edit-message{
+        color: #080808 !important;
+        padding: 10px;
+        border: 1px solid rgba(0 , 0, 0, 0.6);
+        border-radius: 10px;
+        
     }
     #cpf-instituicao{
         height: 15%;
@@ -1138,6 +1213,20 @@
     #erro-cpf-font{
         font-size: 20px;
         color:#813c3c;
+    }
+    #erro-senha{
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 35%;
+        
+    }
+    #erro-senha-font{
+        font-size: 16px;
+        color:#813c3c;
+        margin-left: 2%;
     }
     @keyframes carregando{
         from{

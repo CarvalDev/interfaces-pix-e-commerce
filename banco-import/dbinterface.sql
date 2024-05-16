@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13/05/2024 às 21:05
+-- Tempo de geração: 15/05/2024 às 21:46
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -34,6 +34,7 @@ CREATE TABLE `tbtentativas` (
   `percursoPerfeito` tinyint(1) DEFAULT NULL,
   `tempoTentativa` time NOT NULL,
   `tipoTentativa` varchar(10) NOT NULL,
+  `concluiuPercurso` tinyint(1) NOT NULL,
   `idUsuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

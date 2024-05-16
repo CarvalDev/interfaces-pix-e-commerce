@@ -12,6 +12,30 @@
 </head>
 <body>
     <!-- primeira tela  -->
+    <div id="tela-mensagem">
+        <div id="esc">  
+            <i class="fa-solid fa-xmark icon-botao icon-esc" id="returnTela7Msg"></i>
+            
+        </div>
+        <div id="conteudo-tela3">
+            <div id="descArea">
+                <span id="tituloDesc">Escreva uma mensagem</span>
+                <span id="saldo-disp">Ela aparece para <span class="negrito">Henrique Fernando</span> no comprovante da transferência.</span></span>
+            </div>
+            <div id="input-msg-area">
+                <input type="text" id="msg-input" placeholder="Sua mensagem aqui...">
+            </div>
+            <div id="regras-area">
+                <div id="divRegras">
+                    <span class="negrito">Regras para as mensagens</span>
+                    <p id="desc-regras">O Green não <span class="negrito">não aceita</span> mensagens abusivas, em tom de ameaça, ofensivas ou que não tenham relação com a transferência de valores</p>
+                </div>
+            </div>
+            <div id="avancar-infos-contato">
+                <button id="salvar-msg-btn">Salvar mensagem</button>
+            </div>
+        </div>
+    </div>
     <div id="login">
         <header id="login-header">
             <span>Login</span>
@@ -366,6 +390,7 @@
                 </div>
                 <div id="escrever">
                     <span id="escrever-font"><i class="fa-solid fa-message icon-botao"></i> Escrever uma mensagem...</span>
+                    
                 </div>
                 <div id="cpf-instituicao">
                     <div id="group-cpf-ins">
@@ -483,6 +508,9 @@
             <i class="fa-solid fa-chevron-left icon-botao icon-esc" id="returnTela9" ></i>
         </div>
         <div id="conteudo-tela3">
+            <div id="erro-senha">
+                <span id="erro-senha-font"></span>
+            </div>
             <div id="titulo-area6">
                 <span>Digite a <span class="roxo">senha de 4 digitos do seu cartão</span></span>
             </div>
@@ -507,7 +535,7 @@
         <div id="conteudo-tela3">
             <div id="como-transferir">
                 <p id="titulo-area8">Comprovante de transferência</p>
-                <span id="para-tal">07 MAI 2024 09:17:10</span>
+                <span class="dataComprovante" id="para-tal">07 MAI 2024 09:17:10</span>
             </div>
             <div id="lista-comprovante">
                 <div id="como-group">
