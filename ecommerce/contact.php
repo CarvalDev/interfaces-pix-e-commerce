@@ -118,6 +118,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/geral.js"></script>
 </body>
 
 </html>

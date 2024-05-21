@@ -49,105 +49,64 @@
 
     <!-- Checkout Start -->
     <div class="container-fluid">
-        <div class="row px-xl-5">
+        <div class="row px-xl-5" >
             <div class="col-lg-8">
                 <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Endereço</span></h5>
                 <div class="bg-light p-30 mb-5">
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <label>Primeiro Nome</label>
-                            <input class="form-control" type="text" placeholder="Nome" >
+                            <input name="input" class="form-control" type="text" placeholder="Nome"
+                            required="required" data-validation-required-message="Please enter your email" >
+                            
                         </div>
                         <div class="col-md-6 form-group">
                             <label>Sobrenome</label>
-                            <input class="form-control" type="text" placeholder="Sobrenome">
+                            <input name="input" class="form-control" type="text" placeholder="Sobrenome"
+                            required="required" data-validation-required-message="Please enter your email" >
                         </div>
                         <div class="col-md-6 form-group">
                             <label>E-mail</label>
-                            <input class="form-control" type="text" placeholder="email@gmail.com">
+                            <input name="input" class="form-control" type="text" placeholder="email@gmail.com"
+                            required="required" data-validation-required-message="Please enter your email" >
                         </div>
+                       
                         <div class="col-md-6 form-group">
-                            <label>Número</label>
-                            <input class="form-control" type="text" placeholder="(00)90000-0000">
+                            <label>CEP</label>
+                            <input name="input" class="form-control" id="logr" type="text" placeholder="CEP"
+                            required="required" data-validation-required-message="Please enter your email" >
                         </div>
                         <div class="col-md-6 form-group">
                             <label>Logradouro</label>
-                            <input class="form-control" id="logr" type="text" placeholder="Endereço">
+                            <input name="input" class="form-control" id="logr" type="text" placeholder="Endereço"
+                            required="required" data-validation-required-message="Please enter your email" >
                         </div>
                         
                        
                         <div class="col-md-6 form-group">
                             <label>Cidade</label>
-                            <input class="form-control" id="cidade" type="text" placeholder="Cidade">
+                            <input name="input" class="form-control" id="cidade" type="text" placeholder="Cidade"
+                            required="required" data-validation-required-message="Please enter your email" >
                         </div>
                         <div class="col-md-6 form-group">
                             <label>Estado</label>
-                            <input class="form-control" id="estado" type="text" placeholder="Estado">
+                            <input name="input" class="form-control" id="estado" type="text" placeholder="Estado"
+                            required="required" data-validation-required-message="Please enter your email" >
                         </div>
                         <div class="col-md-6 form-group">
                             <label>Número</label>
-                            <input class="form-control" id="num" type="text" placeholder="Número">
+                            <input name="input" class="form-control" id="num" type="text" placeholder="Número"
+                            required="required" data-validation-required-message="Please enter your email" >
                         </div>
-                        <div class="col-md-12 form-group">
-                            
+                        <div class="col-md-12 d-flex w-100 justify-content-center align-items-center form-group">
+                            <h4 id="campos-vazios" class="text-danger"></h4>
                         </div>
                         <div class="col-md-12">
                            
                         </div>
                     </div>
                 </div>
-                <div class="collapse mb-5" id="shipping-address">
-                    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Shipping Address</span></h5>
-                    <div class="bg-light p-30">
-                        <div class="row">
-                            <div class="col-md-6 form-group">
-                                <label>First Name</label>
-                                <input class="form-control" type="text" placeholder="John">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>Last Name</label>
-                                <input class="form-control" type="text" placeholder="Doe">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>E-mail</label>
-                                <input class="form-control" type="text" placeholder="example@email.com">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>Mobile No</label>
-                                <input class="form-control" type="text" placeholder="+123 456 789">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>Address Line 1</label>
-                                <input class="form-control" type="text" placeholder="123 Street">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>Address Line 2</label>
-                                <input class="form-control" type="text" placeholder="123 Street">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>Country</label>
-                                <select class="custom-select">
-                                    <option selected>United States</option>
-                                    <option>Afghanistan</option>
-                                    <option>Albania</option>
-                                    <option>Algeria</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>City</label>
-                                <input class="form-control" type="text" placeholder="New York">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>State</label>
-                                <input class="form-control" type="text" placeholder="New York">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>ZIP Code</label>
-                                <input class="form-control" type="text" placeholder="123">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            
             </div>
             <div class="col-lg-4">
                 <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Pedido</span></h5>
@@ -155,8 +114,8 @@
                     <div class="border-bottom">
                         <h6 class="mb-3">Produto</h6>
                         <div class="d-flex justify-content-between">
-                            <p><?=$_GET['nome']?></p>
-                            <p><?=$_GET['preco']?></p>
+                            <p id="nome-prod"><?=$_GET['nome']?></p>
+                            <p id="preco-prod"><?=$_GET['preco']?></p>
                         </div>
                         
                     </div>
@@ -181,24 +140,26 @@
                     <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Pagamento</span></h5>
                     <div class="bg-light p-30">
                         <div class="form-group">
+                            <h5>Selecione uma forma de pagamento</h5>
                             <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="paypal">
-                                <label class="custom-control-label" for="paypal">Cartão</label>
+                                <input type="radio" value="cartao" class="custom-control-input" name="payment" id="paypal">
+                                <label class="custom-control-label" id="cartao-btn" for="paypal">Cartão</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="directcheck">
+                                <input type="radio" value="pix" class="custom-control-input" name="payment" id="directcheck">
                                 <label class="custom-control-label" for="directcheck">PIX</label>
                             </div>
                         </div>
                         <div class="form-group mb-4">
                             <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="banktransfer">
+                                <input type="radio" value="boleto" class="custom-control-input" name="payment" id="banktransfer">
                                 <label class="custom-control-label" for="banktransfer">Boleto</label>
                             </div>
                         </div>
-                        <button class="btn btn-block btn-primary font-weight-bold py-3">Confirmar pedido</button>
+                        <p id="erro-pagamento"></p>
+                        <button id="btn-confirma" class="btn btn-block btn-primary font-weight-bold py-3">Confirmar pedido</button>
                     </div>
                 </div>
             </div>
@@ -250,7 +211,9 @@
             }
         }
     },1000)
+    localStorage.setItem('endereco', undefined)
     </script>
+    <script src="js/geral.js"></script>
 </body>
 
 </html>

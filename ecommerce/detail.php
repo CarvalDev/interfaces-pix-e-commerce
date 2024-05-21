@@ -263,6 +263,7 @@
         
     </script>
     <script src="js/carrinho.js"></script>
+    <script src="js/geral.js"></script>
 </body>
 
 </html>

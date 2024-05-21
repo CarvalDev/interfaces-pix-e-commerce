@@ -1,0 +1,29 @@
+#barra{
+    position: relative;
+    z-index: 1;
+}
+#circulo-barra{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    bottom: -580%;
+    z-index: 1;
+    
+}
+#circulo-barra-3{
+    position: absolute;
+}
+#circulo-barra i{
+    font-size: 30px;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    
+}
+#barra2{
+    position: absolute;
+    top: 0;
+    
+}
