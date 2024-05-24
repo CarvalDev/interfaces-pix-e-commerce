@@ -131,6 +131,19 @@ $("#entrar").click(() =>{
     })
 })  
 
+let icon_pix = document.getElementsByName('pix')[0]
+
+$(icon_pix).click(() =>{
+    if(lugaresCertos[3]){
+        clicks--
+        clicksCertos++
+        lugaresCertos[3] = false
+    }   
+    $("#tela-home").css('display', 'none')
+    $("#tela-pix").css('display', 'flex')
+})  
+
+
 
 
 

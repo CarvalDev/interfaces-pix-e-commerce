@@ -18,12 +18,28 @@
     z-index: 2;
 }
 
+#tela-pix{
+    display: flex;
+    height: 800px;
+}
+
 #circle-top{
     position: absolute;
     background-color: #e7f5fe;
     width: 100%;
     height: 175%;
     top: 0;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    z-index: 1;
+}
+
+#circle-top-pix{
+    position: absolute;
+    background-color: #e7f5fe;
+    width: 100%;
+    height: 150%;
+    top: 0%;
     border-bottom-left-radius: 100%;
     border-bottom-right-radius: 100%;
     z-index: 1;
@@ -104,6 +120,8 @@
 
 body{
     height: 100vh;
+    z-index: 7 !important;
+    background-color: #FFF;
 }
 
 .azul{
@@ -138,6 +156,24 @@ body{
     background-color:  #0979cb;
 }
 
+.bola-azul{
+
+    background-color: #e7f5fe;
+    padding: 8px 5px;
+    border-radius: 100%;
+}
+
+.input-chave-valor{
+    border: none;
+    border-radius: 10px;
+    background-color: #c6ccd1;
+    color: #444546;
+    font-size: 18px;
+    padding: 10px;
+    height: 33px;
+    width: 60%;
+}
+
 .formulario input{
     width: 70%;
     border-radius: 10px;
@@ -149,7 +185,7 @@ body{
 }
 
 #tela-login{
-    display: flex 
+    display: none 
     ;
     background: rgb(255,255,255);
     background: linear-gradient(180deg, rgba(255,255,255,1) 40%, rgba(186,247,245,1) 58%, rgba(0,212,255,1) 100%);
@@ -193,4 +229,17 @@ body{
     height: 1.8rem;
     text-transform: uppercase;
     color: #fff;
+}
+
+#options-pix p{
+    width: 75px;
+    text-transform: uppercase;
+    
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: none;
+    height: 30px;
+    color: #335d9c;
+    text-align: center;
+    font-weight: 700 ;
 }
