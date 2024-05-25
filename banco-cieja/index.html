@@ -218,7 +218,7 @@
         </section>
     </div>
     <div id="tela-pix" class="tela border">
-        <header id="head" class="d-flex justify-content-start align-items-center-start row w-100   flex-row" style="height: 15%;">
+        <header id="head" class="d-flex justify-content-start align-items-center-start row w-100   flex-row" style="height: 12%;">
             <div id="index" class="h-25 w-50 mt-3 por-cima" style="">
                 <img src="./img/cieja-logo.png" width="120px" height="20px" class="img-fluid" alt="">
             </div>
@@ -237,12 +237,13 @@
         </div>
         
     </section>
-    <section  class="w-100 flex-column d-flex flex-row align-items-center  border  justify-content-center" style="height:33%" >
+    <section  class="w-100 flex-column d-flex flex-row align-items-center    justify-content-center" style="height:29%" >
         <div id="options-pix" class="h-100 w-100 d-flex justify-content-center align-items-center flex-column b">
-            <div class="d-flex justify-content-around border w-100 flex-row align-items-center ">
+            <div class="d-flex justify-content-around  w-100 flex-row align-items-center ">
                 <div class="d-flex flex-column justify-content-center align-items-center">
-                    <div id="bola"  class="d-flex justify-content-center align-items-center p-4 rounded-circle">
+                    <div id="bola" name="transferir-icon"  class="d-flex justify-content-center align-items-center p-4 rounded-circle">
                         <i class="fa-solid fa-money-bill-transfer text-white fs-4"></i>
+                        <span id="ok"><i class="fa-solid fa-circle-check fs-5 text-success"></i></span>
                     </div>
                     <p>TRANSFERIR</p>
                 </div>
@@ -259,7 +260,7 @@
                     <p>AGENDAR</p>
                 </div>
             </div>
-            <div class="d-flex justify-content-around border w-100 flex-row align-items-center ">
+            <div class="d-flex justify-content-around  w-100 flex-row align-items-center ">
                 <div class="d-flex flex-column justify-content-center align-items-center">
                     <div id="bola" class="d-flex justify-content-center align-items-center p-4 rounded-circle">
                         <i class="fa-solid fa-qrcode text-white fs-4"></i>
@@ -280,7 +281,7 @@
                 </div>
             </div>
         </div>
-        <div class="d-flex flex-row justify-content-center gap-2 align-items-center w-100">
+        <div  name="parte-transferir" class="flex-row justify-content-center transferir gap-2 align-items-center w-100">
             <div class="" style="height: 5px; background-color: #e7f5fe;width: 23%;">
                 
             </div>
@@ -290,23 +291,100 @@
             </div>
         </div>
     </section>
-    <section  class="w-100 flex-column d-flex flex-row align-items-center gap-2 border  justify-content-center" style="height:12%" >
+    <section name="parte-transferir"  class="w-100 transferir flex-column  flex-row align-items-center gap-2   justify-content-center" style="height:18%" >
         <div class="d-flex flex-row gap-2 justify-content-center align-items-center">
             <label for="">CHAVE</label>
-            <input class="input-chave-valor" type="text" placeholder="">
-            <span></span>
+            <input id="chave" class="input-chave-valor" type="text" placeholder="">
+            <span id="chave-ok"></span>
         </div>
+        <span class="text-danger" id="erro-chave"></span>
         <div class="d-flex flex-row gap-2 justify-content-center align-items-center"> 
             <label for="">VALOR</label>
-            <input type="text" class="input-chave-valor" placeholder="">
-            <span></span>
+            <input id="valor" type="text" class="input-chave-valor" onKeyUp="mascaraMoeda(this, event)" placeholder="">
+            <span id="valor-ok"></span>
         </div>
 
+    </section>
+    <section id="parte-destino"  class="w-100 flex-column  flex-row align-items-center gap-2   justify-content-center" style="height:18%" >
+        <div class="d-flex w-100 justify-content-start">
+            <span class="ms-2">FAVORECIDO: <span class="azul">MARIA APARECIDA</span></span>
+        </div>
+        <div class="d-flex gap-2  flex-column  align-items-start justify-content-start" style="width: 92%;">
+            <div id="inst" class="d-flex  flex-row  justify-content-start w-100 align-items-center">
+                <div class="d-flex flex-row  align-items-center  justify-content-start " style="width: 60%;">
+                <img src="./img/bb-logo.png" width="50px" class="img-fluid"  alt="">
+                <span>BANCO DO BRASIL</span>
+                </div>
+                <div class="d-flex flex-row w-25 ">
+                    <i class="fa-solid fa-chevron-right icon text-black ms-2"></i>
+                    <span class="ms-3" id="banco-ok"></span>
+                </div>
+            </div>
+            <div class="d-flex flex-row  justify-content-start w-100 align-items-center">
+                <div class="d-flex flex-row  align-items-center  justify-content-start " style="width: 60%;">
+                    <i class="fa-solid fa-building-columns mx-2" style="font-size: 30px;"></i>
+                <span class="ms-1">OUTRO BANCO</span>
+                </div>
+                <div class="d-flex w-25 ">
+                    <i class="fa-solid fa-chevron-right icon text-black ms-2"></i>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="parte-como" class="w-100 flex-column  flex-row align-items-center gap-2   justify-content-center"  >
+        <div class="d-flex justify-content-start align-items-center w-100">
+            <span class="ms-2">COMO VOCÊ GOSTARIA DE TRANSFERIR?</span>
+        </div>
+        <form class="d-flex flex-row w-100 justify-content-evenly  gap-2 align-items-center">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="saldo" >
+                <p style="font-size: 12px;width: 80%;" class="form-check-p text-uppercase fw-bold" for="flexRadioDefault1">
+                  Saldo da conta
+                </p>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault"  checked>
+                <p style="font-size: 12px;width: 80%;" class="form-check-label text-uppercase fw-bold" for="flexRadioDefault2">
+                  Cartão de crédito (10% de Juros)
+                </p>
+              </div>
+        </form>
+        <div id="buttons" class=" flex-row w-100 justify-content-evenly">
+            <button class="btn btn-danger ">CANCELAR</button>
+            <button id="confirmar" class="btn btn-success">CONFIRMAR</button>
+        </div>
+        <span class="text-danger" id="erro-inst"></span>
     </section>
     
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="./js/main.js"></script>
+<script>
+     String.prototype.reverse = function(){
+  return this.split('').reverse().join(''); 
+};
+document.getElementById("valor").value = "R$"
+    function mascaraMoeda(campo,evento){
+        
+  var tecla = (!evento) ? window.event.keyCode : evento.which;
+  var valor  =  campo.value.replace(/[^\d]+/gi,'').reverse();
+  var resultado  = "";
+  var mascara = "##.###.###,##".reverse();
+  for (var x=0, y=0; x<mascara.length && y<valor.length;) {
+    if (mascara.charAt(x) != '#') {
+      resultado += mascara.charAt(x);
+      x++;
+    } else {
+      resultado += valor.charAt(y);
+      y++;
+      x++;
+    }
+  }
+  campo.value = "R$ " + resultado.reverse();
+}
+</script>
 </html> 

@@ -1,10 +1,13 @@
 let clicks =0;
 let clicksCertos =0;
-let lugaresCertos = [true, true, true, true]
+let lugaresCertos = [true, true, true, true, true, true, true, true, true, true]
 let nomeUsuario;
 let dataInicio = new Date()
 let tipo = "pix-cieja"
 let idTentativa
+let inst = false
+let chavePreenchida = false
+let cpfCerto = "96735261921"
 $(document).click(() =>{
     clicks++
     console.log(clicks)
@@ -144,7 +147,128 @@ $(icon_pix).click(() =>{
 })  
 
 
+let transferir = document.getElementsByName('transferir-icon')[0]
 
+$(transferir).click(() =>{
+    if(lugaresCertos[4]){
+        clicks--
+        clicksCertos++
+        lugaresCertos[4] = false
+    }   
+    $("#tela-pix").css('display', 'none')
+    $("#tela-pix").css('display', 'flex')
+    $("#ok").css('display','flex')
+    let parte_transferir = document.getElementsByName('parte-transferir')
+    for(var i=0;i<parte_transferir.length;i++){
+        $(parte_transferir[i]).css('display', 'flex')
+    }
+})  
+
+$("#chave").click(() =>{
+    if(lugaresCertos[5]){
+        clicks--
+        clicksCertos++
+        lugaresCertos[5] = false
+    }   
+   
+})  
+
+$("#inst").click(() =>{
+    if(lugaresCertos[7]){
+        clicks--
+        clicksCertos++
+        lugaresCertos[7] = false
+    }   
+    inst = true
+    $("#banco-ok").html(`<i class="fa-solid fa-circle-check fs-1 text-success"></i>`)
+})  
+
+
+
+
+$("#chave").keyup(() =>{
+    
+    if($("#chave").val() == cpfCerto){
+        $("#parte-destino").css('display','flex')
+        $("#chave-ok").html(`<i class="fa-solid fa-circle-check fs-1 text-success"></i>`)
+        document.getElementById('erro-chave').innerText = ""
+        chavePreenchida = true
+        
+    }else if($("#chave").val() != "" && $("#chave").val() != cpfCerto){
+        $("#parte-destino").css('display', 'none')
+        document.getElementById('erro-chave').innerText = "CHAVE INVÁLIDA"
+        $("#chave-ok").html(``)
+        chavePreenchida = false
+    }else{
+        document.getElementById('erro-chave').innerText = ""
+        $("#chave-ok").html(``)
+        chavePreenchida = false
+    }
+   
+    
+}) 
+
+$("#valor").click(() =>{
+    if(lugaresCertos[6]){
+        clicks--
+        clicksCertos++
+        lugaresCertos[6] = false
+    }   
+   
+})  
+
+$("#saldo").click(() =>{
+    if(lugaresCertos[8]){
+        clicks--
+        clicksCertos++
+        lugaresCertos[8] = false
+    }   
+   
+})  
+
+
+
+$("#confirmar").click(() =>{
+    if(lugaresCertos[9]){
+        clicks--
+        clicksCertos++
+        lugaresCertos[9] = false
+    }   
+   
+})  
+
+console.log(document.getElementById('saldo'))
+
+setInterval( () =>{
+if(document.getElementById('saldo').checked){
+    if(inst){
+    $("#buttons").css('display', 'flex')
+    document.getElementById('erro-inst').innerText = ""
+    }
+    else {
+    document.getElementById('erro-inst').innerText = "SELECIONE UMA INSTITUIÇÃO BANCARIA"
+}
+
+}else{
+    $("#buttons").css('display', 'none')
+    
+}
+},100)
+
+
+
+$('#valor').keyup(() =>{
+    if($("#valor").val() != "R$" && $("#valor").val() != "R$ "){
+        $("#valor-ok").html(`<i class="fa-solid fa-circle-check fs-1 text-success"></i>`)
+        console.log('ur')
+        if(chavePreenchida)
+        $('#parte-como').css('display', 'flex')
+    }else{
+        $("#valor-ok").html(``)
+        $('#parte-como').css('display', 'none')
+    }
+    console.log($("#valor").val() + "aaa")
+})
 
 
 $("#mostrar").click(() =>{
