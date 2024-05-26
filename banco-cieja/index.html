@@ -303,7 +303,7 @@
             <input id="valor" type="text" class="input-chave-valor" onKeyUp="mascaraMoeda(this, event)" placeholder="">
             <span id="valor-ok"></span>
         </div>
-
+        <span class="text-danger" id="message-error-saldo"></span>
     </section>
     <section id="parte-destino"  class="w-100 flex-column  flex-row align-items-center gap-2   justify-content-center" style="height:18%" >
         <div class="d-flex w-100 justify-content-start">
@@ -351,7 +351,7 @@
               </div>
         </form>
         <div id="buttons" class=" flex-row w-100 justify-content-evenly">
-            <button class="btn btn-danger ">CANCELAR</button>
+            <button id="cancelar" class="btn btn-danger ">CANCELAR</button>
             <button id="confirmar" class="btn btn-success">CONFIRMAR</button>
         </div>
         <span class="text-danger" id="erro-inst"></span>
@@ -392,7 +392,7 @@
             <span style="color: #899094;" class="fw-bold  ms-2">CHAVE: <span class="fw-bold azul ms-3">96735261921</span></span>
             </div>
             <div class="w-100 mt-2 d-flex justify-content-start">
-                <span style="color: #899094;" class="fw-bold  ms-2">VALOR DO PIX: <span class="fw-bold azul ms-3">R$ 273,00</span></span>
+                <span style="color: #899094;" class="fw-bold  ms-2">VALOR DO PIX: <span class="fw-bold azul ms-3" id="valor-trans"></span></span>
             </div>
             <div class="w-100 mt-2 d-flex justify-content-start">
                 <P style=" width: 70%;" class="fw-bold  azul ms-2">O VALOR SAIRÁ DA SUA CONTA CORRENTE</P>
@@ -404,14 +404,14 @@
                         <span class="" id="ok-fazer"><i class="fa-solid fa-circle-check fs-5 text-black"></i></span>
 
                 </div>
-                <button class="btn btn-danger">CANCELAR</button>
+                <button id="cancelar-2" class="btn btn-danger">CANCELAR</button>
             </div>
         
     </section>
     <section id="digitar-senha" class="w-100 mt-4 justify-content-center align-items-center flex-column">
         <span style="color: #899094;">DIGITE SUA SENHA DE 4 DIGITOS</span>
         <div id="group-password-2" class="w-100  gap-3 mt-2 flex-row d-flex justify-content-center">
-            <input id="senha-2" class="input-chave-valor" type="password" style="border: none;width: 40%;">
+            <input name="senha-2" id="senha-2" maxlength="4" class="input-chave-valor" type="password" style="border: none;width: 40%;">
                 <i id="mostrar-2" class="fa-regular fa-eye text-black"></i>
                 <i id="ocultar-2" class="fa-regular fa-eye-slash text-black"></i>
                 <span class="" id="senha-ok"></span>
@@ -425,6 +425,7 @@
             <i class="fa-solid fa-receipt fs-1"></i>
             <span class="fw-bold ms-3">SEU COMPROVANTE AQUI</span>
         </div>
+        <button id="voltar" class="btn btn-success mt-4">VOLTAR AO MENU</button>
     </section>
     </div>
 </body>

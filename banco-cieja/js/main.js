@@ -6,6 +6,8 @@ let dataInicio = new Date()
 let tipo = "pix-cieja"
 let idTentativa
 let idUsuario
+let valor
+let saldoInt = 200;
 let final = false
 let telaLogin = true
 let inst = false
@@ -22,6 +24,18 @@ $(document).click(() =>{
     
 
 })
+
+const fixValor = valor =>{
+    if(valor.length >= 3){
+        return `R$ ${valor}`
+    }
+    if(valor.length == 0){
+        return false
+    }
+    if(valor.length > 0 && valor.length <3){
+        return `R$ ${valor},00`
+    }
+}
 
 const update = () =>{
 let ct = clicks + clicksCertos
@@ -404,15 +418,102 @@ if(document.getElementById('saldo').checked){
 
 $('#valor').keyup(() =>{
     if($("#valor").val() != "R$" && $("#valor").val() != "R$ "){
+        let valorTransferencia = $("#valor").val()
+        valorTransferencia = valorTransferencia.split(' ')[1]
+        if(valorTransferencia.includes(".")){
+            valorTransferencia = valorTransferencia.replaceAll(".","")
+        }
+        // valorTransferencia = valorTransferencia.replaceAll(',','.')
+        console.log(valorTransferencia)
+        if(parseFloat(valorTransferencia.replaceAll(",",".")) > saldoInt){
+            document.getElementById("message-error-saldo").innerText = "Saldo insuficiente"
+            $("#valor-ok").html(`<i class="fa-solid  fa-xmark fs-1 text-danger"></i>`)
+            
+            $('#parte-como').css('display', 'none')
+        }else{
         $("#valor-ok").html(`<i class="fa-solid fa-circle-check fs-1 text-success"></i>`)
-        console.log('ur')
+        document.getElementById("message-error-saldo").innerText = ""
+        valor = fixValor(valorTransferencia)
+        document.getElementById('valor-trans').innerText = valor
         if(chavePreenchida)
         $('#parte-como').css('display', 'flex')
+        
+        }
     }else{
         $("#valor-ok").html(``)
         $('#parte-como').css('display', 'none')
     }
     console.log($("#valor").val() + "aaa")
+})
+
+$("#cancelar").click(() =>{
+    $("#tela-pix").css('display','none')
+    $("#tela-home").css('display',' flex')
+    document.getElementById('chave').value = ""
+    document.getElementById('valor').value = "R$"
+    $('#banco-ok').html(``)
+    $("#parte-destino").css('display','none')
+    $('#parte-como').css('display','none')
+    $('#buttons').css('display','none')
+    $("#chave-ok").css('display','none')
+    $("#valor-ok").css('display','none')
+    $("#ok").css('display','none')
+    let parte_transferir = document.getElementsByName('parte-transferir')
+    for(var i=0;i<parte_transferir.length;i++){
+        $(parte_transferir[i]).css('display', 'none')
+    }
+    inst = false
+})
+let senha2 = document.getElementsByName('senha-2')[0]
+$("#voltar").click(() =>{
+    $("#tela-confirmar").css('display','none')
+    $("#tela-home").css('display','flex')
+    
+    document.getElementById('chave').value = ""
+    document.getElementById('valor').value = "R$"
+    senha2.value = ""
+    senha2.id = "senha-2"
+    $("#senha-ok").html(``)
+    $('#banco-ok').html(``)
+    $("#parte-destino").css('display','none')
+    $('#parte-como').css('display','none')
+    $('#buttons').css('display','none')
+    $("#chave-ok").css('display','none')
+    $("#valor-ok").css('display','none')
+    $("#ok").css('display','none')
+    $("#digitar-senha").css('display','none')
+    $("#ok-fazer").css('display','none')
+    $("#finalizado").css('display','none')
+    let parte_transferir = document.getElementsByName('parte-transferir')
+    for(var i=0;i<parte_transferir.length;i++){
+        $(parte_transferir[i]).css('display', 'none')
+    }
+    inst = false
+})
+
+$("#cancelar-2").click(() =>{
+    $("#tela-confirmar").css('display','none')
+    $("#tela-home").css('display',' flex')
+    document.getElementById('chave').value = ""
+    document.getElementById('valor').value = "R$"
+    senha2.value = ""
+    senha2.id = "senha-2"
+    $("#senha-ok").html(``)
+    $('#banco-ok').html(``)
+    $("#parte-destino").css('display','none')
+    $('#parte-como').css('display','none')
+    $('#buttons').css('display','none')
+    $("#chave-ok").css('display','none')
+    $("#valor-ok").css('display','none')
+    $("#ok").css('display','none')
+    $("#digitar-senha").css('display','none')
+    $("#ok-fazer").css('display','none')
+    $("#finalizado").css('display','none')
+    let parte_transferir = document.getElementsByName('parte-transferir')
+    for(var i=0;i<parte_transferir.length;i++){
+        $(parte_transferir[i]).css('display', 'none')
+    }
+    inst = false
 })
 
 
@@ -435,10 +536,11 @@ $("#ocultar").click(() =>{
 })
 
 
+
 $("#mostrar-2").click(() =>{
     $("#mostrar-2").css('display', 'none')
     $("#ocultar-2").css('display', 'block')
-    $("#senha-2").attr('type', 'text')
+    $(senha2).attr('type', 'text')
     clicks--
     
     
@@ -447,7 +549,7 @@ $("#mostrar-2").click(() =>{
 $("#ocultar-2").click(() =>{
     $("#ocultar-2").css('display', 'none')
     $("#mostrar-2").css('display', 'block')
-    $("#senha-2").attr('type', 'password')
+    $(senha2).attr('type', 'password')
     clicks--
     
     
