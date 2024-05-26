@@ -22,9 +22,9 @@
             <div class="w-100 gap-2 h-50 d-flex justify-content-center align-items-center flex-column formulario">
                 <input type="text" id="email">
                 <div id="group-password" class="w-100  d-flex justify-content-center">
-                <input id="senha" type="password">
-                <i id="mostrar" class="fa-regular fa-eye"></i>
-                <i id="ocultar" class="fa-regular fa-eye-slash"></i>
+                    <input id="senha" type="password">
+                    <i id="mostrar" class="fa-regular fa-eye"></i>
+                    <i id="ocultar" class="fa-regular fa-eye-slash"></i>
                 </div>
                 <button id="entrar">Entrar</button>
                 <span id="erro-senha" class="text-danger"></span>
@@ -357,6 +357,75 @@
         <span class="text-danger" id="erro-inst"></span>
     </section>
     
+    </div>
+    <div id="tela-confirmar" class="tela ">
+        <header id="head" class="d-flex justify-content-start align-items-center-start row w-100   flex-row" style="height: 12%;">
+            <div id="index" class="h-25 w-50 mt-3 por-cima" style="">
+                <img src="./img/cieja-logo.png" width="120px" height="20px" class="img-fluid" alt="">
+            </div>
+            <div id="foto-nome" class="d-flex flex-column justify-content-center align-items-end por-cima">
+                <img src="./img/user.png" width="30px" height="30px" class="img-fluid" alt="">
+                <p class="text-uppercase fw-bold azul">Henrique Santos</p>
+            </div>
+            <div id="circle-top-pix">
+                
+            </div>
+    </header>
+    <section class="w-100  d-flex flex-column align-items-center justify-content-center por-cima" style="height:5%">
+        <div class="d-flex flex-row justify-content-center align-items-center w-100 ">
+            <span  class="azul fw-bold  text-center text-uppercase"><i  class="fa-brands fa-pix text-black fs-2 p-2 rounded-circle"></i></span>
+            <span class="ms-1 fw-bold ">ÁREA PIX</span>
+        </div>
+        
+    </section>
+    <section class="w-100  flex-column d-flex align-items-center justify-content-center">
+        <span class="azul mt-3 fw-bold" style="color: #899094;">CONFIRMAR DADOS</span>
+        <div class="d-flex w-100 flex-column mt-2 justify-content-centeralign-items-start">
+            <span class="fw-bold azul ms-2" style="color: #899094;">FAVORECIDO:</span>
+            <span class="fw-bold text-black ms-2">MARIA APARECIDA</span>
+        </div>
+        <div class="d-flex flex-row mt-2 w-100 ms-2 align-items-center  justify-content-start " style="width: 60%;">
+            <img src="./img/bb-logo.png" width="50px" class="img-fluid"  alt="">
+            <span>BANCO DO BRASIL</span>
+            </div>
+            <div class="w-100 mt-3 d-flex justify-content-start">
+            <span style="color: #899094;" class="fw-bold  ms-2">CHAVE: <span class="fw-bold azul ms-3">96735261921</span></span>
+            </div>
+            <div class="w-100 mt-2 d-flex justify-content-start">
+                <span style="color: #899094;" class="fw-bold  ms-2">VALOR DO PIX: <span class="fw-bold azul ms-3">R$ 273,00</span></span>
+            </div>
+            <div class="w-100 mt-2 d-flex justify-content-start">
+                <P style=" width: 70%;" class="fw-bold  azul ms-2">O VALOR SAIRÁ DA SUA CONTA CORRENTE</P>
+            </div>
+            <div class="d-flex flex-row mt-2 w-100 ms-2 align-items-center  justify-content-around ">
+                <div id="fazer-pix">
+                    <button id="fazer-pix-btn" class="btn btn-success">FAZER PIX</button>
+                   
+                        <span class="" id="ok-fazer"><i class="fa-solid fa-circle-check fs-5 text-black"></i></span>
+
+                </div>
+                <button class="btn btn-danger">CANCELAR</button>
+            </div>
+        
+    </section>
+    <section id="digitar-senha" class="w-100 mt-4 justify-content-center align-items-center flex-column">
+        <span style="color: #899094;">DIGITE SUA SENHA DE 4 DIGITOS</span>
+        <div id="group-password-2" class="w-100  gap-3 mt-2 flex-row d-flex justify-content-center">
+            <input id="senha-2" class="input-chave-valor" type="password" style="border: none;width: 40%;">
+                <i id="mostrar-2" class="fa-regular fa-eye text-black"></i>
+                <i id="ocultar-2" class="fa-regular fa-eye-slash text-black"></i>
+                <span class="" id="senha-ok"></span>
+        </div>
+        
+
+    </section>
+    <section id="finalizado" class=" w-100 mt-3 justify-content-center align-items-center flex-column">
+        <p style="width: 70%;" class="fw-bold text-success text-uppercase text-center">Transferência REALIZADA COM SUCESSO!</p>
+        <div class="w-100 mt-4  d-flex flex-row justify-content-center align-items-center">
+            <i class="fa-solid fa-receipt fs-1"></i>
+            <span class="fw-bold ms-3">SEU COMPROVANTE AQUI</span>
+        </div>
+    </section>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

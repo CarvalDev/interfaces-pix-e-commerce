@@ -1,10 +1,13 @@
 let clicks =0;
 let clicksCertos =0;
-let lugaresCertos = [true, true, true, true, true, true, true, true, true, true]
+let lugaresCertos = [true, true, true, true, true, true, true, true, true, true, true, true]
 let nomeUsuario;
 let dataInicio = new Date()
 let tipo = "pix-cieja"
 let idTentativa
+let idUsuario
+let final = false
+let telaLogin = true
 let inst = false
 let chavePreenchida = false
 let cpfCerto = "96735261921"
@@ -12,7 +15,73 @@ $(document).click(() =>{
     clicks++
     console.log(clicks)
     console.log(clicksCertos)
+    if(!telaLogin){
+        update()
+    }
+    console.log(idTentativa)
+    
+
 })
+
+const update = () =>{
+let ct = clicks + clicksCertos
+let ce = clicks
+let pp;
+let cc;
+if (final) cc = '1'
+else cc = '0'
+let url;
+
+url ='../app/model/atualizarTentativa.php'
+
+let data = new Date()
+
+
+
+let diferencaMS =   data -dataInicio
+
+
+let segundosC = (diferencaMS/1000)
+let minutosC = segundosC/60
+segundosC = segundosC%60
+let horasC = minutosC/60
+minutosC = minutosC%60
+let tt = parseInt(horasC)+":"+parseInt(minutosC)+":"+parseInt(segundosC)
+console.log(tt)
+if(clicks == 0){
+pp = 1
+} else{
+pp = 0
+}
+
+$.ajax({
+type: 'POST',
+dataType: 'json',
+data: {
+    ct: ct,
+    ce: ce,
+    pp: pp,
+    tt:tt,
+    cc: cc,
+    t:tipo,
+    id: idTentativa
+},
+url: '../app/model/atualizarTentativa.php',
+async: true,
+
+success: (response) =>{
+    console.log(response)
+    if(response.id !== undefined){
+        
+    idTentativa = response.id
+    }
+    
+},
+error: (e) =>{
+    console.log(e)
+}
+})
+}
 
 
 const insert =  (idUsuario) =>{
@@ -64,9 +133,10 @@ const insert =  (idUsuario) =>{
             if(response.id !== undefined){
                 
             idTentativa = response.id
+            telaLogin = false
             $("#tela-login").css('display', 'none')
             $("#tela-home").css('display','flex')
-            $("#body").css('height', '108vh')
+            $("#body").css('height', '130vh')
             }
             
         },
@@ -77,6 +147,38 @@ const insert =  (idUsuario) =>{
     console.log(idTentativa)
     
 }
+
+
+
+const pagamento = (s) =>{
+    $.ajax({
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            id: 1,
+            s:s
+        },
+        url: '../app/model/pagamento.php',
+        async: true,
+        
+        success: async (response) =>{
+            if(response.senhaOk){
+                $("#senha-ok").html(`<i class="fa-solid  fa-circle-check fs-1 text-success"></i>`)
+                document.getElementById('senha-2').id = ""
+                $("#finalizado").css('display','flex')
+                final = true
+                update()
+            }else{
+                $("#senha-ok").html(`<i class="fa-solid  fa-xmark fs-1 text-danger"></i>`)
+            }   
+           
+        },
+        error: (response) =>{
+            console.log(response)
+            
+        }
+    })
+    }
 
 
 $("#email").click(() =>{
@@ -123,6 +225,7 @@ $("#entrar").click(() =>{
             if(response.usuario !== undefined){
                 nomeUsuario = response.usuario.nome
                 insert(response.usuario.id)
+                idUsuario = response.usuario.id
 
             }else{
                 document.getElementById('erro-senha').innerText = "Email ou senha incorretos!"
@@ -191,17 +294,23 @@ $("#chave").keyup(() =>{
     if($("#chave").val() == cpfCerto){
         $("#parte-destino").css('display','flex')
         $("#chave-ok").html(`<i class="fa-solid fa-circle-check fs-1 text-success"></i>`)
+
         document.getElementById('erro-chave').innerText = ""
         chavePreenchida = true
         
     }else if($("#chave").val() != "" && $("#chave").val() != cpfCerto){
         $("#parte-destino").css('display', 'none')
+        $("#parte-como").css('display','none')
+        $("#buttons").css('display','none')
+        document.getElementById('valor').value = ""
         document.getElementById('erro-chave').innerText = "CHAVE INVÁLIDA"
         $("#chave-ok").html(``)
         chavePreenchida = false
     }else{
         document.getElementById('erro-chave').innerText = ""
         $("#chave-ok").html(``)
+        $("#parte-como").css('display','none')
+        $("#buttons").css('display','none')
         chavePreenchida = false
     }
    
@@ -216,6 +325,19 @@ $("#valor").click(() =>{
     }   
    
 })  
+
+$("#fazer-pix-btn").click(() =>{
+    if(lugaresCertos[10]){
+        clicks--
+        clicksCertos++
+        lugaresCertos[10] = false
+    }   
+    $("#ok-fazer").css('display','flex')
+    $("#digitar-senha").css('display','flex')
+   
+})  
+
+
 
 $("#saldo").click(() =>{
     if(lugaresCertos[8]){
@@ -234,8 +356,31 @@ $("#confirmar").click(() =>{
         clicksCertos++
         lugaresCertos[9] = false
     }   
+    $("#tela-pix").css('display','none')
+    $("#tela-confirmar").css('display','flex')
+    
    
 })  
+
+
+$("#senha-2").click(() =>{
+    if(lugaresCertos[11]){
+        clicks--
+        clicksCertos++
+        lugaresCertos[11] = false
+    }   
+    
+    
+   
+})  
+
+$("#senha-2").keyup(() =>{
+    let senha = $("#senha-2").val()
+    if(senha.length ==4){
+        pagamento(senha)
+    }
+})
+
 
 console.log(document.getElementById('saldo'))
 
@@ -289,3 +434,21 @@ $("#ocultar").click(() =>{
     
 })
 
+
+$("#mostrar-2").click(() =>{
+    $("#mostrar-2").css('display', 'none')
+    $("#ocultar-2").css('display', 'block')
+    $("#senha-2").attr('type', 'text')
+    clicks--
+    
+    
+})
+
+$("#ocultar-2").click(() =>{
+    $("#ocultar-2").css('display', 'none')
+    $("#mostrar-2").css('display', 'block')
+    $("#senha-2").attr('type', 'password')
+    clicks--
+    
+    
+})

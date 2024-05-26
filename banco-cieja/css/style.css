@@ -13,13 +13,24 @@
     position: relative;
 }
 
+
+
+#fazer-pix{
+    position: relative;
+}
+
 #head{
     position: relative;
     z-index: 2;
 }
 
 #tela-pix{
-    display: flex;
+    display: none;
+    height: 850px;
+}
+
+#tela-confirmar{
+    display: none;
     height: 850px;
 }
 
@@ -119,7 +130,7 @@
 }
 
 body{
-    height: 130vh;
+    height: 100vh;
     z-index: 7 !important;
     background-color: #FFF;
 }
@@ -150,6 +161,8 @@ body{
 
     font-weight: 700 ;
 }
+
+
 #bola{
     height: 30px;
     width: 30px;
@@ -165,12 +178,14 @@ body{
     display: none;
 }
 
-#ok{
+#ok, #ok-fazer{
     position: absolute;
     top: -15%;
     right: -5%;
     display: none;
 }
+
+
 
 .bola-azul{
 
@@ -202,7 +217,7 @@ body{
 }
 
 #tela-login{
-    display: none 
+    display: flex 
     ;
     background: rgb(255,255,255);
     background: linear-gradient(180deg, rgba(255,255,255,1) 40%, rgba(186,247,245,1) 58%, rgba(0,212,255,1) 100%);
@@ -221,8 +236,32 @@ body{
     cursor: pointer;
 }
 
-#ocultar{
+#group-password-2{
+    position: relative;
+}
+
+#group-password-2 i{
+    position: absolute;
+    top: 25%;
+    left: 60%;
+    font-size: 20px;
+    color:#33abe2 ;
+    cursor: pointer;
+}
+
+
+#ocultar, #ocultar-2{
     display: none;
+}
+
+#digitar-senha, #finalizado{
+    display: none;
+}
+
+#senha-ok{
+    position: absolute;
+    left: 80%;
+    top: 10%;
 }
 
 #group-password input{
